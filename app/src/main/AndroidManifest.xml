@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <!-- Permissions -->
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MICROPHONE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- Queries for app launching -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent>
+    </queries>
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Echo"
+        tools:targetApi="31">
+        <activity
+            android:name=".ui.activities.YouTubePlayerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.YouTubeSearchActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.MapActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Echo" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCKL4SpNgKfS-iXvXZrFu1Ln4IyDgIjkmM" /> <!-- Activities -->
+        <activity
+            android:name=".ui.activities.SplashActivity"
+            android:exported="true"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.activities.LoginActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Echo" />
+        <activity
+            android:name=".ui.activities.RegisterActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Echo" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Echo.MainActivity" />
+        <activity
+            android:name=".ui.activities.SettingsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Echo" />
+        <activity
+            android:name=".ui.activities.ConversationActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Echo" />
+        <activity
+            android:name=".ui.activities.NotesActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
+        <activity
+            android:name=".ui.activities.RemindersActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" /> <!-- <service -->
+        <!-- android:name=".services.background.VoiceRecognitionService" -->
+        <!-- android:exported="false" /> -->
+        <!-- <service -->
+        <!-- android:name=".services.assistant.EchoAssistantService" -->
+        <!-- android:exported="false" /> &lt;!&ndash; Add to <application> &ndash;&gt; -->
+        <!-- <service android:name=".services.reminder.ReminderNotificationService" /> -->
+        <!-- <service android:name=".services.assistant.SpeechRecognitionService"/> -->
+        <service
+            android:name=".services.reminder.GeofenceTransitionsJobIntentService"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE">
+            <intent-filter>
+                <action android:name="com.example.echo.ACTION_START_LISTENING" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".services.background.EchoBackgroundService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="microphone" /> <!-- Receivers -->
+        <receiver
+            android:name=".receivers.BootCompletedReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>
