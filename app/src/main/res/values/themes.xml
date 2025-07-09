@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base application theme -->
+    <style name="Theme.Echo" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/echo_blue</item>
+        <item name="colorPrimary">@color/echo_blue</item>
+        <item name="colorPrimaryVariant">@color/echo_blue_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/echo_blue</item>
+        <item name="colorSecondaryVariant">@color/echo_blue_light</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="android:statusBarColor">@color/echo_blue_dark</item>
+        <item name="actionBarTheme">@style/Theme.Echo.ActionBar</item>
+        <item name="toolbarStyle">@style/Theme.Echo.Toolbar</item>
+    </style>
+
+    <!-- Main Activity Theme -->
+    <style name="Theme.Echo.MainActivity" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/splash_background</item>
+        <item name="colorPrimary">@color/echo_blue</item>
+        <item name="colorPrimaryVariant">@color/echo_blue_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/echo_blue_light</item>
+        <item name="colorSecondaryVariant">@color/echo_blue</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="android:statusBarColor">@color/splash_background</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="colorSurface">@color/echo_blue_light</item>
+        <item name="colorOnSurface">@color/white</item>
+        <item name="toolbarStyle">@style/Theme.Echo.MainActivity.Toolbar</item>
+    </style>
+
+    <!-- Custom ActionBar Theme -->
+    <style name="Theme.Echo.ActionBar" parent="ThemeOverlay.MaterialComponents.ActionBar">
+        <item name="android:background">@color/white</item>
+        <item name="titleTextColor">@color/echo_blue</item>
+        <item name="android:textColorPrimary">@color/echo_blue</item>
+    </style>
+
+    <!-- Custom Toolbar Style for Main Activity -->
+    <style name="Theme.Echo.MainActivity.Toolbar" parent="Widget.MaterialComponents.Toolbar">
+        <item name="android:background">@color/echo_blue</item>
+        <item name="titleTextColor">@color/white</item>
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:elevation">8dp</item>
+    </style>
+
+    <!-- Original Toolbar Style -->
+    <style name="Theme.Echo.Toolbar" parent="Widget.MaterialComponents.Toolbar">
+        <item name="android:background">@color/white</item>
+        <item name="titleTextColor">@color/echo_blue</item>
+        <item name="android:textColorPrimary">@color/echo_blue</item>
+    </style>
+
+    <!-- Splash screen theme -->
+    <style name="SplashTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/splash_background</item>
+        <item name="android:statusBarColor">@color/splash_background</item>
+        <item name="android:navigationBarColor">@color/splash_background</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <!-- Assistant Fragment Theme -->
+    <style name="Theme.Echo.AssistantFragment">
+        <item name="cardViewStyle">@style/Theme.Echo.CardView</item>
+        <item name="materialButtonStyle">@style/Theme.Echo.Button</item>
+        <item name="editTextStyle">@style/Theme.Echo.EditText</item>
+    </style>
+
+    <!-- Custom CardView Style -->
+    <style name="Theme.Echo.CardView" parent="Widget.MaterialComponents.CardView">
+        <item name="cardBackgroundColor">@color/echo_blue_light</item>
+        <item name="cardCornerRadius">12dp</item>
+        <item name="cardElevation">6dp</item>
+    </style>
+
+    <!-- Custom Button Style -->
+    <style name="Theme.Echo.Button" parent="Widget.MaterialComponents.Button">
+        <item name="android:textColor">@color/white</item>
+        <item name="backgroundTint">@color/echo_blue</item>
+        <item name="cornerRadius">8dp</item>
+        <item name="android:padding">12dp</item>
+    </style>
+
+    <!-- Custom EditText Style -->
+    <style name="Theme.Echo.EditText" parent="Widget.AppCompat.EditText">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textColorHint">@color/white_alpha_70</item>
+        <item name="android:backgroundTint">@android:color/transparent</item>
+    </style>
+
+    <!-- Bottom Navigation Theme -->
+    <style name="Theme.Echo.BottomNavigation" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="android:background">@color/echo_blue</item>
+        <item name="itemTextColor">@color/white</item>
+        <item name="itemIconTint">@color/white</item>
+        <item name="itemTextAppearanceActive">@style/Theme.Echo.BottomNavigation.TextAppearance
+        </item>
+        <item name="itemTextAppearanceInactive">@style/Theme.Echo.BottomNavigation.TextAppearance
+        </item>
+    </style>
+
+    <!-- Bottom Navigation Text Appearance -->
+    <style name="Theme.Echo.BottomNavigation.TextAppearance" parent="@style/TextAppearance.MaterialComponents.Caption">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <!-- Custom Popup Theme for Overflow Menu -->
+    <style name="Theme.Echo.PopupOverlay" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:textColor">@color/echo_blue</item>
+        <item name="android:textColorPrimary">@color/echo_blue</item>
+        <item name="android:textColorSecondary">@color/echo_blue_light</item>
+    </style>
+
+    <!-- Progress Bar Theme -->
+    <style name="Theme.Echo.ProgressBar" parent="Widget.AppCompat.ProgressBar">
+        <item name="android:indeterminateTint">@color/echo_blue</item>
+        <item name="android:indeterminateTintMode">src_in</item>
+    </style>
+
+    <!-- Message Bubble Themes -->
+    <style name="Theme.Echo.MessageBubble.User" parent="Widget.MaterialComponents.CardView">
+        <item name="cardBackgroundColor">@color/echo_blue</item>
+        <item name="cardCornerRadius">16dp</item>
+        <item name="cardElevation">4dp</item>
+    </style>
+
+    <style name="Theme.Echo.MessageBubble.AI" parent="Widget.MaterialComponents.CardView">
+        <item name="cardBackgroundColor">@color/echo_blue_light</item>
+        <item name="cardCornerRadius">16dp</item>
+        <item name="cardElevation">4dp</item>
+    </style>
+
+    <!-- Message Text Styles -->
+    <style name="Theme.Echo.MessageText" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineSpacingExtra">2dp</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textIsSelectable">true</item>
+    </style>
+
+    <style name="Theme.Echo.TimestampText" parent="@android:style/TextAppearance.Small">
+        <item name="android:textColor">@color/white_alpha_70</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:alpha">0.7</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style>
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Echo" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+</resources>
